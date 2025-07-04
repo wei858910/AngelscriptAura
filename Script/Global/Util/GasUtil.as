@@ -33,7 +33,7 @@ namespace GasUtil {
 
 	FGameplayAbilitySpecHandle GiveAbility(AActor TargetActor, TSubclassOf<UGameplayAbility> AbilityClass, int Level = 1, int InputID = AuraConst::DefaultAbilityInputID, UObject SourceObject = nullptr) {
 		UAbilitySystemComponent TargetASC = AbilitySystem::GetAbilitySystemComponent(TargetActor);
-		if (TargetASC == nullptr) {
+		if (TargetASC == nullptr || !TargetActor.HasAuthority()) {
 			return FGameplayAbilitySpecHandle();
 		}
 
