@@ -1,8 +1,9 @@
 
-class UAUW_Button : UAuraUserWidget {
-	UPROPERTY(BindWidget)
-	UButton Button;
+class UAUW_Button : UAuraUserWidget
+{
+    UPROPERTY(BindWidget)
+    UButton Button;
 
-	UPROPERTY(BindWidget)
-	UTextBlock Text;
+    UPROPERTY(BindWidget)
+    UTextBlock Text;
 }

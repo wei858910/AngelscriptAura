@@ -1,4 +1,5 @@
 
-class AAuraPlayerState : APlayerState {
-	default NetUpdateFrequency = 100;
+class AAuraPlayerState : APlayerState
+{
+    default NetUpdateFrequency = 100;
 }

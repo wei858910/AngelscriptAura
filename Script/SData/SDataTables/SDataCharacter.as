@@ -1,31 +1,32 @@
 // All characters' config, including player and enemy
 
 USTRUCT()
-struct FSDataCharacter {
-	UPROPERTY()
-	uint16 CharacterID;
+struct FSDataCharacter
+{
+    UPROPERTY()
+    uint16 CharacterID;
 
-	UPROPERTY()
-	FName CharacterName;
+    UPROPERTY()
+    FName CharacterName;
 
-	UPROPERTY()
-	ECharacterClass CharacterClass;
+    UPROPERTY()
+    ECharacterClass CharacterClass;
 
-	UPROPERTY()
-	UAnimMontage HitReactMontage;
+    UPROPERTY()
+    UAnimMontage HitReactMontage;
 
-	UPROPERTY()
-	UAnimMontage DeathMontage;
+    UPROPERTY()
+    UAnimMontage DeathMontage;
 
-	UPROPERTY()
-	UMaterialInstance DissolveMaterial;
+    UPROPERTY()
+    UMaterialInstance DissolveMaterial;
 
-	UPROPERTY()
-	UMaterialInstance WeaponDissolveMaterial;
+    UPROPERTY()
+    UMaterialInstance WeaponDissolveMaterial;
 
-	UPROPERTY()
-	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
+    UPROPERTY()
+    TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 
-	UPROPERTY()
-	UNiagaraSystem ImpactEffect; // Effects after being hit
+    UPROPERTY()
+    UNiagaraSystem ImpactEffect; // Effects after being hit
 }

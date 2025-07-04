@@ -1,28 +1,29 @@
 
-struct FEffectProperties {
-	FGameplayEffectContextHandle EffectContextHandle;
+struct FEffectProperties
+{
+    FGameplayEffectContextHandle EffectContextHandle;
 
-	UPROPERTY()
-	UAngelscriptAbilitySystemComponent SourceASC = nullptr;
+    UPROPERTY()
+    UAngelscriptAbilitySystemComponent SourceASC = nullptr;
 
-	UPROPERTY()
-	AActor SourceAvatarActor = nullptr;
+    UPROPERTY()
+    AActor SourceAvatarActor = nullptr;
 
-	UPROPERTY()
-	AController SourceController = nullptr;
+    UPROPERTY()
+    AController SourceController = nullptr;
 
-	UPROPERTY()
-	ACharacter SourceCharacter = nullptr;
+    UPROPERTY()
+    ACharacter SourceCharacter = nullptr;
 
-	UPROPERTY()
-	UAngelscriptAbilitySystemComponent TargetASC = nullptr;
+    UPROPERTY()
+    UAngelscriptAbilitySystemComponent TargetASC = nullptr;
 
-	UPROPERTY()
-	AActor TargetAvatarActor = nullptr;
+    UPROPERTY()
+    AActor TargetAvatarActor = nullptr;
 
-	UPROPERTY()
-	AController TargetController = nullptr;
+    UPROPERTY()
+    AController TargetController = nullptr;
 
-	UPROPERTY()
-	ACharacter TargetCharacter = nullptr;
+    UPROPERTY()
+    ACharacter TargetCharacter = nullptr;
 }

@@ -7,36 +7,40 @@ Features:
 4. When another actor ends overlapping with the actor, the gameplay effect is removed
 */
 
-class AAuraNiagaraActor : AActor {
-	UPROPERTY(DefaultComponent, RootComponent)
-	USceneComponent SceneRoot;
+class AAuraNiagaraActor : AActor
+{
+    UPROPERTY(DefaultComponent, RootComponent)
+    USceneComponent SceneRoot;
 
-	UPROPERTY(DefaultComponent, Attach = SceneRoot)
-	UBoxComponent Box;
+    UPROPERTY(DefaultComponent, Attach = SceneRoot)
+    UBoxComponent Box;
 
-	UPROPERTY(DefaultComponent, Attach = SceneRoot)
-	UNiagaraComponent Niagara;
+    UPROPERTY(DefaultComponent, Attach = SceneRoot)
+    UNiagaraComponent Niagara;
 
-	UPROPERTY()
-	TSubclassOf<UGameplayEffect> GameplayEffectClass;
+    UPROPERTY()
+    TSubclassOf<UGameplayEffect> GameplayEffectClass;
 
-	FActiveGameplayEffectHandle EffectHandle;
+    FActiveGameplayEffectHandle EffectHandle;
 
-	UFUNCTION(BlueprintOverride)
-	void BeginPlay() {
-		check(GameplayEffectClass != nullptr);
-	}
+    UFUNCTION(BlueprintOverride)
+    void BeginPlay()
+    {
+        check(GameplayEffectClass != nullptr);
+    }
 
-	UFUNCTION(BlueprintOverride)
-	void ActorBeginOverlap(AActor OtherActor) {
-		Print("Overlapping with: " + OtherActor.Name);
-		EffectHandle = GasUtil::ApplyGameplayEffect(this, OtherActor, GameplayEffectClass);
-	}
+    UFUNCTION(BlueprintOverride)
+    void ActorBeginOverlap(AActor OtherActor)
+    {
+        Print("Overlapping with: " + OtherActor.Name);
+        EffectHandle = GasUtil::ApplyGameplayEffect(this, OtherActor, GameplayEffectClass);
+    }
 
-	UFUNCTION(BlueprintOverride)
-	void ActorEndOverlap(AActor OtherActor) {
-		Print("No longer overlapping with: " + OtherActor.Name);
-		GasUtil::RemoveGameplayEffect(OtherActor, EffectHandle);
-		EffectHandle = AuraConst::EmptyEffectHandle;
-	}
+    UFUNCTION(BlueprintOverride)
+    void ActorEndOverlap(AActor OtherActor)
+    {
+        Print("No longer overlapping with: " + OtherActor.Name);
+        GasUtil::RemoveGameplayEffect(OtherActor, EffectHandle);
+        EffectHandle = AuraConst::EmptyEffectHandle;
+    }
 }

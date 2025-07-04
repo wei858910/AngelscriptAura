@@ -1,5 +1,6 @@
 
-class AAuraAIController : AAIController {
-	UPROPERTY(DefaultComponent)
-	UBehaviorTreeComponent BehaviorTreeComponent;
+class AAuraAIController : AAIController
+{
+    UPROPERTY(DefaultComponent)
+    UBehaviorTreeComponent BehaviorTreeComponent;
 }

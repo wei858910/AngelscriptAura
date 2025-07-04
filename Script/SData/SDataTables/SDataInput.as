@@ -1,11 +1,12 @@
 USTRUCT()
-struct FSDataInput {
-	UPROPERTY()
-	UInputAction InputAction;
+struct FSDataInput
+{
+    UPROPERTY()
+    UInputAction InputAction;
 
-	UPROPERTY()
-	FGameplayTag GameplayTag;
+    UPROPERTY()
+    FGameplayTag GameplayTag;
 
-	UPROPERTY()
-	TSubclassOf<UGameplayAbility> AbilityClass;
+    UPROPERTY()
+    TSubclassOf<UGameplayAbility> AbilityClass;
 }
