@@ -13,6 +13,10 @@ class UAAT_TargetDataUnderMouse : UAngelscriptAbilityTask {
 		}
 
 		APlayerController PC = ASC.GetAbilityActorInfo().PlayerController;
+		if(PC == nullptr)
+		{
+			return;
+		}
 		FHitResult HitResult;
 		PC.GetHitResultUnderCursorByChannel(ETraceTypeQuery::Visibility, false, HitResult);
 		if (!HitResult.bBlockingHit) {
