@@ -5,9 +5,9 @@
 
 class UBTService_FindNearestPlayer : UBTService_BlueprintBase {
 	// -------------------- Properties --------------------
-	private UBlackboardKeyType_Object ObjectObject = Cast<UBlackboardKeyType_Object>(NewObject(Class.DefaultObject, UBlackboardKeyType_Object, n"ObjectType"));
-	private UBlackboardKeyType_Bool BoolType = Cast<UBlackboardKeyType_Bool>(NewObject(Class.DefaultObject, UBlackboardKeyType_Bool, n"BoolType"));
-	private UBlackboardKeyType_Float FloatType = Cast<UBlackboardKeyType_Float>(NewObject(Class.DefaultObject, UBlackboardKeyType_Float, n"FloatType"));
+	private UBlackboardKeyType_Object ObjectObject = nullptr;
+	private UBlackboardKeyType_Bool BoolType = nullptr;
+	private UBlackboardKeyType_Float FloatType = nullptr;
 
 	UPROPERTY()
 	FBlackboardKeySelector TargetToFollow;
@@ -30,6 +30,9 @@ class UBTService_FindNearestPlayer : UBTService_BlueprintBase {
 	UFUNCTION(BlueprintOverride)
 	void ActivationAI(AAIController OwnerController, APawn ControlledPawn) {
 		check(TargetToFollow.SelectedKeyName == AuraConst::AI_Blackboard_Key_TargetToFollow);
+		ObjectObject = Cast<UBlackboardKeyType_Object>(NewObject(Class.DefaultObject, UBlackboardKeyType_Object, n"ObjectType"));
+		BoolType = Cast<UBlackboardKeyType_Bool>(NewObject(Class.DefaultObject, UBlackboardKeyType_Bool, n"BoolType"));
+		FloatType = Cast<UBlackboardKeyType_Float>(NewObject(Class.DefaultObject, UBlackboardKeyType_Float, n"FloatType"));
 	}
 
 	UFUNCTION(BlueprintOverride)

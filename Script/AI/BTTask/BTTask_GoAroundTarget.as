@@ -2,11 +2,15 @@
 class UBTTask_GoAroundTarget : UBTTask_BlueprintBase {
 	UPROPERTY()
 	FBlackboardKeySelector AroundTarget;
-	private UBlackboardKeyType_Vector VectorObject = Cast<UBlackboardKeyType_Vector>(NewObject(Class.DefaultObject, UBlackboardKeyType_Vector, n"VectorType"));
+	private UBlackboardKeyType_Vector VectorObject = nullptr;
 	default AroundTarget.AllowedTypes.Add(VectorObject);
 
 	UFUNCTION(BlueprintOverride)
 	void ExecuteAI(AAIController OwnerController, APawn ControlledPawn) {
+		if(VectorObject == nullptr)
+		{
+			VectorObject = Cast<UBlackboardKeyType_Vector>(NewObject(Class.DefaultObject, UBlackboardKeyType_Vector, n"VectorType"));
+		}
 		FinishExecute(ExecuteImpl(OwnerController, ControlledPawn));
 	}
 
