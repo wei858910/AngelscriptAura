@@ -31,7 +31,7 @@ class AAuroEffectActor : AActor
         // auto AngelscriptGASCharacter = Cast<AAngelscriptGASCharacter>(OtherActor);
         // if (AngelscriptGASCharacter != nullptr)
         // {
-        // 	const UAttributeSet AttributeSet = AngelscriptGASCharacter.AbilitySystem.GetAttributeSet(UAuraAttributeSet::StaticClass());
+        // 	const UAttributeSet AttributeSet = AngelscriptGASCharacter.AbilitySystem.GetAttributeSet(UAuraAttributeSet.Get());
         // 	UAuraAttributeSet AuraAttributeSet = Cast<UAuraAttributeSet>(AttributeSet);
         // 	AuraAttributeSet.Health.SetCurrentValue(AuraAttributeSet.Health.GetCurrentValue() + 10);
         // 	DestroyActor();

@@ -49,7 +49,7 @@ class AAuraCharacter : AAuraCharacterBase
     void BeginPlay()
     {
         // const bool IsDedicatedServer = System::IsDedicatedServer();
-        PlayerModuleMgr = Cast<UPlayerModuleMgr>(NewObject(this, UPlayerModuleMgr::StaticClass(), n"UPlayerModuleMgr"));
+        PlayerModuleMgr = Cast<UPlayerModuleMgr>(NewObject(this, UPlayerModuleMgr, n"UPlayerModuleMgr"));
         PlayerModuleMgr.Ctor(this);
         PlayerModuleMgr.Init();
 

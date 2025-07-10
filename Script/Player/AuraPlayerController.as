@@ -48,7 +48,7 @@ class AAuraPlayerController : APlayerController
         SetupInputComponent();
 
         System::LogString("AuraPlayerController BeginPlay");
-        ClickToMove = Cast<UClickToMove>(NewObject(this, UClickToMove::StaticClass()));
+        ClickToMove = Cast<UClickToMove>(NewObject(this, UClickToMove));
         ClickToMove.Ctor(this);
 
         OwnerCharacter = Cast<AAuraCharacter>(ControlledPawn);
@@ -130,7 +130,7 @@ class AAuraPlayerController : APlayerController
 
     void SetupInputComponent()
     {
-        UActorComponent InputComponent = GetComponentByClass(UEnhancedInputComponent::StaticClass());
+        UActorComponent InputComponent = GetComponentByClass(UEnhancedInputComponent);
         if (InputComponent == nullptr)
         {
             return; // server doesn't have input component

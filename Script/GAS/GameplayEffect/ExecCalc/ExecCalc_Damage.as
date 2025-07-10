@@ -2,18 +2,18 @@
 class UExecCalc_Damage : UGameplayEffectExecutionCalculation
 {
     // Attacker Attributes
-    FGameplayEffectAttributeCaptureDefinition SourceMinAttackPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::MinAttackPower, EGameplayEffectAttributeCaptureSource::Source, true);
-    FGameplayEffectAttributeCaptureDefinition SourceMaxAttackPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::MaxAttackPower, EGameplayEffectAttributeCaptureSource::Source, true);
-    FGameplayEffectAttributeCaptureDefinition SourceMinMagicPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::MinMagicPower, EGameplayEffectAttributeCaptureSource::Source, true);
-    FGameplayEffectAttributeCaptureDefinition SourceMaxMagicPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::MaxMagicPower, EGameplayEffectAttributeCaptureSource::Source, true);
-    FGameplayEffectAttributeCaptureDefinition SourceAccuracyDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::Accuracy, EGameplayEffectAttributeCaptureSource::Source, true);
-    FGameplayEffectAttributeCaptureDefinition SourceCriticalChanceDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::CriticalChance, EGameplayEffectAttributeCaptureSource::Source, true);
-    FGameplayEffectAttributeCaptureDefinition SourceCriticalDamageDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::CriticalDamage, EGameplayEffectAttributeCaptureSource::Source, true);
+    FGameplayEffectAttributeCaptureDefinition SourceMinAttackPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::MinAttackPower, EGameplayEffectAttributeCaptureSource::Source, true);
+    FGameplayEffectAttributeCaptureDefinition SourceMaxAttackPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::MaxAttackPower, EGameplayEffectAttributeCaptureSource::Source, true);
+    FGameplayEffectAttributeCaptureDefinition SourceMinMagicPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::MinMagicPower, EGameplayEffectAttributeCaptureSource::Source, true);
+    FGameplayEffectAttributeCaptureDefinition SourceMaxMagicPowerDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::MaxMagicPower, EGameplayEffectAttributeCaptureSource::Source, true);
+    FGameplayEffectAttributeCaptureDefinition SourceAccuracyDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::Accuracy, EGameplayEffectAttributeCaptureSource::Source, true);
+    FGameplayEffectAttributeCaptureDefinition SourceCriticalChanceDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::CriticalChance, EGameplayEffectAttributeCaptureSource::Source, true);
+    FGameplayEffectAttributeCaptureDefinition SourceCriticalDamageDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::CriticalDamage, EGameplayEffectAttributeCaptureSource::Source, true);
 
     // Victim Attributes
-    FGameplayEffectAttributeCaptureDefinition TargetEvasionDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::Evasion, EGameplayEffectAttributeCaptureSource::Target, false);
-    FGameplayEffectAttributeCaptureDefinition TargetDefenseDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::Defense, EGameplayEffectAttributeCaptureSource::Target, false);
-    FGameplayEffectAttributeCaptureDefinition TargetMagicResistanceDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::MagicResistance, EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition TargetEvasionDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::Evasion, EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition TargetDefenseDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::Defense, EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition TargetMagicResistanceDef = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::MagicResistance, EGameplayEffectAttributeCaptureSource::Target, false);
 
     default RelevantAttributesToCapture.Add(SourceMinAttackPowerDef);
     default RelevantAttributesToCapture.Add(SourceMaxAttackPowerDef);
@@ -96,7 +96,7 @@ class UExecCalc_Damage : UGameplayEffectExecutionCalculation
 
     void SetDamage(FGameplayEffectCustomExecutionOutput& OutExecutionOutput, float32 Damage, EDamageType DamageType) const
     {
-        FGameplayAttribute             IncomingDamageAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), AuraAttributes::IncomingDamage);
+        FGameplayAttribute             IncomingDamageAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), AuraAttributes::IncomingDamage);
         FGameplayModifierEvaluatedData EvaluatedData;
         EvaluatedData.SetAttribute(IncomingDamageAttribute);
         EvaluatedData.SetModifierOp(EGameplayModOp::Override);

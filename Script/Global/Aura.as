@@ -13,7 +13,7 @@ namespace Aura
             {
                 FVector          Location(i * TileSizeX, j * TileSizeY, 0);
                 FName            ActorName = FName(f"FloorTile_{i}_{j}");
-                AStaticMeshActor Actor = Cast<AStaticMeshActor>(SpawnActor(AStaticMeshActor::StaticClass(), Location, FRotator::ZeroRotator, ActorName, true));
+                AStaticMeshActor Actor = Cast<AStaticMeshActor>(SpawnActor(AStaticMeshActor, Location, FRotator::ZeroRotator, ActorName, true));
                 Actor.StaticMeshComponent.SetStaticMesh(Cast<UStaticMesh>(LoadObject(Outer, f"/Game/Assets/Dungeon/SM_Tile_3x3_A")));
                 // FinishSpawningActor(Actor);
                 // Actor.StaticMeshComponent.MarkRenderStateDirty();

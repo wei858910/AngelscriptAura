@@ -16,7 +16,7 @@ class UGasModule : UObject
         ASC.OnAttributeSetRegistered(this, n"OnAttributeSetRegistered");
 
         // This is how we register an attribute set with an actor.
-        AttributeSet = Cast<UAuraAttributeSet>(ASC.RegisterAttributeSet(UAuraAttributeSet::StaticClass()));
+        AttributeSet = Cast<UAuraAttributeSet>(ASC.RegisterAttributeSet(UAuraAttributeSet.Get()));
         ASC.InitAbilityActorInfo(OwnerCharacter, OwnerCharacter);
     }
 

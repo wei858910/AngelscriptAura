@@ -2,11 +2,11 @@
 // MaxHealth = Vitality * 20
 class UMMC_Warrior_MaxHealth : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition VitalityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Vitality", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition VitalityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Vitality", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        VitalityAttribute;
 
     default RelevantAttributesToCapture.Add(VitalityCaptureDefinition);
-    default VitalityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Vitality");
+    default VitalityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Vitality");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -21,11 +21,11 @@ class UMMC_Warrior_MaxHealth : UGameplayModMagnitudeCalculation
 // MaxMana = Intelligence * 5
 class UMMC_Warrior_MaxMana : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        IntelligenceAttribute;
 
     default RelevantAttributesToCapture.Add(IntelligenceCaptureDefinition);
-    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence");
+    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -40,11 +40,11 @@ class UMMC_Warrior_MaxMana : UGameplayModMagnitudeCalculation
 // Health Regen = Vitality * 0.5
 class UMMC_Warrior_HealthRegen : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition VitalityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Vitality", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition VitalityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Vitality", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        VitalityAttribute;
 
     default RelevantAttributesToCapture.Add(VitalityCaptureDefinition);
-    default VitalityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Vitality");
+    default VitalityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Vitality");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -59,11 +59,11 @@ class UMMC_Warrior_HealthRegen : UGameplayModMagnitudeCalculation
 // Mana Regen = Intelligence * 0.1
 class UMMC_Warrior_ManaRegen : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        IntelligenceAttribute;
 
     default RelevantAttributesToCapture.Add(IntelligenceCaptureDefinition);
-    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence");
+    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -78,15 +78,15 @@ class UMMC_Warrior_ManaRegen : UGameplayModMagnitudeCalculation
 // Attack Power = Strength * 2 + Dexterity * 0.5
 class UMMC_Warrior_AttackPower : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition StrengthCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Strength", EGameplayEffectAttributeCaptureSource::Target, false);
-    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition StrengthCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Strength", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        StrengthAttribute;
     FGameplayAttribute                        DexterityAttribute;
 
     default RelevantAttributesToCapture.Add(StrengthCaptureDefinition);
     default RelevantAttributesToCapture.Add(DexterityCaptureDefinition);
-    default StrengthAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Strength");
-    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity");
+    default StrengthAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Strength");
+    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -102,11 +102,11 @@ class UMMC_Warrior_AttackPower : UGameplayModMagnitudeCalculation
 // Magic Power = Intelligence * 1.5
 class UMMC_Warrior_MagicPower : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        IntelligenceAttribute;
 
     default RelevantAttributesToCapture.Add(IntelligenceCaptureDefinition);
-    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence");
+    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -121,15 +121,15 @@ class UMMC_Warrior_MagicPower : UGameplayModMagnitudeCalculation
 // Defense = Strength * 1.5 + Vitality * 0.5
 class UMMC_Warrior_Defense : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition StrengthCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Strength", EGameplayEffectAttributeCaptureSource::Target, false);
-    FGameplayEffectAttributeCaptureDefinition VitalityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Vitality", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition StrengthCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Strength", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition VitalityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Vitality", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        StrengthAttribute;
     FGameplayAttribute                        VitalityAttribute;
 
     default RelevantAttributesToCapture.Add(StrengthCaptureDefinition);
     default RelevantAttributesToCapture.Add(VitalityCaptureDefinition);
-    default StrengthAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Strength");
-    default VitalityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Vitality");
+    default StrengthAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Strength");
+    default VitalityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Vitality");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -145,11 +145,11 @@ class UMMC_Warrior_Defense : UGameplayModMagnitudeCalculation
 // Accuracy = 0.5 + (Dexterity / 200)
 class UMMC_Warrior_Accuracy : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        DexterityAttribute;
 
     default RelevantAttributesToCapture.Add(DexterityCaptureDefinition);
-    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity");
+    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -164,11 +164,11 @@ class UMMC_Warrior_Accuracy : UGameplayModMagnitudeCalculation
 // Evasion = 0.2 + (Dexterity / 200)
 class UMMC_Warrior_Evasion : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        DexterityAttribute;
 
     default RelevantAttributesToCapture.Add(DexterityCaptureDefinition);
-    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity");
+    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -183,11 +183,11 @@ class UMMC_Warrior_Evasion : UGameplayModMagnitudeCalculation
 // Critical Chance = 0.05 + (Dexterity / 400) * 0.25
 class UMMC_Warrior_CriticalChance : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        DexterityAttribute;
 
     default RelevantAttributesToCapture.Add(DexterityCaptureDefinition);
-    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity");
+    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -202,11 +202,11 @@ class UMMC_Warrior_CriticalChance : UGameplayModMagnitudeCalculation
 // Critical Damage = 120% + (Min(Dexterity,100) / 100) * 80%
 class UMMC_Warrior_CriticalDamage : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition DexterityCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        DexterityAttribute;
 
     default RelevantAttributesToCapture.Add(DexterityCaptureDefinition);
-    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Dexterity");
+    default DexterityAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Dexterity");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -221,11 +221,11 @@ class UMMC_Warrior_CriticalDamage : UGameplayModMagnitudeCalculation
 // Magic Resistance = Intelligence * 0.5
 class UMMC_Warrior_MagicResistance : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition IntelligenceCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        IntelligenceAttribute;
 
     default RelevantAttributesToCapture.Add(IntelligenceCaptureDefinition);
-    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Intelligence");
+    default IntelligenceAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Intelligence");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const

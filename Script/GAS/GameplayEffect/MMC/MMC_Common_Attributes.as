@@ -2,11 +2,11 @@
 // Min Attack Power = Attack Power * 0.9
 class UMMC_Common_MinAttackPower : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition AttackPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"AttackPower", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition AttackPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"AttackPower", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        AttackPowerAttribute;
 
     default RelevantAttributesToCapture.Add(AttackPowerCaptureDefinition);
-    default AttackPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"AttackPower");
+    default AttackPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet, n"AttackPower");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -21,11 +21,11 @@ class UMMC_Common_MinAttackPower : UGameplayModMagnitudeCalculation
 // Max Attack Power = Attack Power * 1.1
 class UMMC_Common_MaxAttackPower : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition AttackPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"AttackPower", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition AttackPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"AttackPower", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        AttackPowerAttribute;
 
     default RelevantAttributesToCapture.Add(AttackPowerCaptureDefinition);
-    default AttackPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"AttackPower");
+    default AttackPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet, n"AttackPower");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -40,11 +40,11 @@ class UMMC_Common_MaxAttackPower : UGameplayModMagnitudeCalculation
 // Min Magic Power = Magic Power * 0.9
 class UMMC_Common_MinMagicPower : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition MagicPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"MagicPower", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition MagicPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"MagicPower", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        MagicPowerAttribute;
 
     default RelevantAttributesToCapture.Add(MagicPowerCaptureDefinition);
-    default MagicPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"MagicPower");
+    default MagicPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet, n"MagicPower");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const
@@ -59,11 +59,11 @@ class UMMC_Common_MinMagicPower : UGameplayModMagnitudeCalculation
 // Max Magic Power = Magic Power * 1.1
 class UMMC_Common_MaxMagicPower : UGameplayModMagnitudeCalculation
 {
-    FGameplayEffectAttributeCaptureDefinition MagicPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet::StaticClass(), n"MagicPower", EGameplayEffectAttributeCaptureSource::Target, false);
+    FGameplayEffectAttributeCaptureDefinition MagicPowerCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(UAuraAttributeSet.Get(), n"MagicPower", EGameplayEffectAttributeCaptureSource::Target, false);
     FGameplayAttribute                        MagicPowerAttribute;
 
     default RelevantAttributesToCapture.Add(MagicPowerCaptureDefinition);
-    default MagicPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"MagicPower");
+    default MagicPowerAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"MagicPower");
 
     UFUNCTION(BlueprintOverride)
     float32 CalculateBaseMagnitude(FGameplayEffectSpec Spec) const

@@ -9,10 +9,10 @@ class UMMC_MaxHealth : UGameplayModMagnitudeCalculation
 
     UMMC_MaxHealth()
     {
-        VigorAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet::StaticClass(), n"Vigor");
+        VigorAttribute = UAngelscriptAttributeSet::GetGameplayAttribute(UAuraAttributeSet.Get(), n"Vigor");
 
         VigorCaptureDefinition = UAngelscriptGameplayEffectUtils::CaptureGameplayAttribute(
-            UAuraAttributeSet::StaticClass(), n"Vigor",
+            UAuraAttributeSet.Get(), n"Vigor",
             EGameplayEffectAttributeCaptureSource::Target, false);
 
         // AddRelevantAttributeToCapture(VigorCaptureDefinition);

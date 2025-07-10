@@ -38,7 +38,7 @@ class AAuraCharacterBase : AAngelscriptGASCharacter
         auto CharacterMap = AuraUtil::GetSDataMgr().CharacterMap;
         check(CharacterMap.Contains(CharacterID));
 
-        GasModule = Cast<UGasModule>(NewObject(this, UGasModule::StaticClass(), n"UGasModule"));
+        GasModule = Cast<UGasModule>(NewObject(this, UGasModule, n"UGasModule"));
         GasModule.Init(this);
 
         // Startup Gameplay Abilities

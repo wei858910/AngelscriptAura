@@ -21,7 +21,7 @@ class UAGA_MeleeAttack : UAGA_SpellBase
         ActorsToIgnore.Add(OwnerCharacter);
 
         TArray<AActor> OutActors;
-        if (!System::SphereOverlapActors(AttackTargetLocation, AuraConst::MeleeAttackRange, MeleeAttackTypes, AAuraCharacterBase::StaticClass(), ActorsToIgnore, OutActors))
+        if (!System::SphereOverlapActors(AttackTargetLocation, AuraConst::MeleeAttackRange, MeleeAttackTypes, AAuraCharacterBase, ActorsToIgnore, OutActors))
         {
             return false;
         }

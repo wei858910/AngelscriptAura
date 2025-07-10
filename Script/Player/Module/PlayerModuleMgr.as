@@ -11,7 +11,7 @@ class UPlayerModuleMgr : UObject
             check(false);
         }
         OwnerCharacter = InOwnerCharacter;
-        PlayerModules.Add(EPlayerModule::Gas, Cast<UPlayerModuleBase>(NewObject(this, UPlayerGasModule::StaticClass(), n"UPlayerGasModule")));
+        PlayerModules.Add(EPlayerModule::Gas, Cast<UPlayerModuleBase>(NewObject(this, UPlayerGasModule, n"UPlayerGasModule")));
 
         for (auto Element : PlayerModules)
         {
