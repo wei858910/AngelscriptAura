@@ -17,9 +17,9 @@ class UAUW_HUD : UAuraUserWidget
 
     void OnCtor() override
     {
-        FSlateBrush ManaBrush;
-        ManaBrush.ResourceObject = LoadObject(this, "/Game/Assets/UI/Globes/MI_ManaGlobe");
-        WBP_GlobeMana.ProgressBar_Main.WidgetStyle.FillImage = ManaBrush;
+        FProgressBarStyle ProgressBarStyle = WBP_GlobeMana.ProgressBar_Main.WidgetStyle;
+        ProgressBarStyle.FillImage.ResourceObject = LoadObject(this, "/Game/Assets/UI/Globes/MI_ManaGlobe");
+        WBP_GlobeMana.ProgressBar_Main.SetWidgetStyle(ProgressBarStyle);
 
         WBP_WideButton_Attributes.Button.OnClicked.AddUFunction(this, n"OnButton_AttributesClicked");
         AuraUtil::GameInstance().EventMgr.OnWidgetClosedEvent.AddUFunction(this, n"OnWidgetClosed");
